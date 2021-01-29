@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% if obj %}Edit content {{obj}} {% else %}Create New Content {% endif %}</title>
+</head>
+<body>
+	{% if obj %}
+	<h1>Edit content {{obj}}</h1> 
+	{% else %}
+	<h1>Add new content</h1>
+	{% endif %}
+
+	<h3>Content Info</h3>
+	<form action="" method="post" enctype="multipart/form-data">
+		{{form.as_p}}
+		
+		{% csrf_token %}
+		<input type="submit" name="" value="Save Content">
+	</form>
+</body>
+</html>

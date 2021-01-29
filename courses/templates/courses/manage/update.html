@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% if object %}
+	Edit Course {{object}}
+	{% else %}
+	Create new course
+	{% endif %}</title>
+</head>
+<body>
+	{% if object %}
+	<h1>Edit Course {{object}}</h1>
+	{% else %}
+	<h1>Create new course</h1>
+	{% endif %}
+
+	<div>
+		<h2>Course Info</h2>
+		<form method="post">
+			{{ form.as_p}}
+			{% csrf_token %}
+			<p><input type="submit" name="submit" value="Save Course"></p>
+		</form>
+	</div>
+</body>
+</html>

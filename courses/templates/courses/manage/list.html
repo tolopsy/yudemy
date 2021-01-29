@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-learning</title>
+</head>
+<body>
+<header><h1>My Courses</h1></header>
+{% for course in object_list %}
+	<div>
+		<h3>{{course}}</h3>
+		<p><a href='{% url "update_course" course.id %}'>Edit</a>
+			<a href='{% url "delete_course" course.id %}'>Delete</a>
+			<a href='{% url "course_module_update" course.id %}'>Edit modules</a>
+			{% if course.modules.count > 0 %}
+			<a href="{% url 'module_content_list' course.modules.first.id %}">Manage contents</a>
+			{% endif %}
+		</p>
+	</div>
+	<hr>
+	{% empty %}
+	<p>You have not created any course yet</p>
+{% endfor %}
+<a href='{% url "create_course" %}'>Create Course</a>
+</body>
+</html>

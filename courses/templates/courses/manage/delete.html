@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Delete Course {{object}}
+	</title>
+</head>
+<body>
+	<h1>Delete Course {{object}}</h1>
+	
+
+	<div>
+		
+		<form action="" method="post">
+			{% csrf_token %}
+			<p>Are you sure you want to delete course {{object}}</p>
+			<p><input type="submit" name="delete" value="CONFIRM"></p>
+		</form>
+	</div>
+</body>
+</html>
