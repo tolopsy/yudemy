@@ -77,4 +77,4 @@ python manage.py runserver
    To use a different port from the default port used by Redis (6379). Specify 
    the port number using the --port flag. Example: src/redis-server --port 6655
 
-3. channels-redis will be installed when you ran 'pip install -r requirements.txt'
+3. channels-redis will be installed when you run 'pip install -r requirements.txt'
